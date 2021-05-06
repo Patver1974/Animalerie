@@ -13,7 +13,7 @@ public class Chat extends Animal {
 
     //region Constructeur
     public Chat(String nom, String sexe, double taille,
-                double poids, Date annif, boolean poilLong, boolean griffeCoupee, String caractere) {
+                double poids, String annif, boolean poilLong, boolean griffeCoupee, String caractere) {
         super(nom, sexe, taille, poids, annif);
         this.poilLong = poilLong;
         this.griffeCoupee=griffeCoupee;
@@ -22,7 +22,15 @@ public class Chat extends Animal {
         Crier();
 
     }
+    public Chat(Chat vchat){
+        super(vchat.getNom(), vchat.getSexe(), vchat.getTaille(), vchat.getPoids(), vchat.getAnnif());
+        this.poilLong = vchat.poilLong;
+        this.griffeCoupee=vchat.griffeCoupee;
+        this.caractere = vchat.getCaractere();
 
+
+
+    }
     public String getCaractere() {
         return caractere;
     }
@@ -30,9 +38,14 @@ public class Chat extends Animal {
     public String getCri() {
         return cri;
     }
-public boolean  isGriffeCoupee(){
+private boolean  isGriffeCoupee(){
         return griffeCoupee;
 
+}
+public String EstGriffeCoupee(){
+        String str ;
+        if (this.griffeCoupee) {str=" Les griffes sont coupees";} else {str=" Les griffes sont pas coupee";}
+return str;
 }
     public boolean  isPoilLong(){
         return poilLong;
@@ -42,11 +55,23 @@ public boolean  isGriffeCoupee(){
         this.griffeCoupee = griffeCoupee;
     }
 
+
     @Override
     public void Crier() {
         cri = "Miauler";
     }
 
+
+    public void allInfo(){
+        System.out.println(" le chat "+ cri);
+        System.out.print(" nom " + super.getNom());
+        System.out.print(" annif " + super.getAnnif().toString());
+        System.out.print(" poids " + super.getPoids());
+        System.out.print(" sexe " + super.getSexe());
+        System.out.print(" taille " + super.getTaille());
+        System.out.println(EstGriffeCoupee());
+
+    }
 
 }
 

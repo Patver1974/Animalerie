@@ -1,8 +1,8 @@
 package be.bxl.formation.Animaux;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
+
+
 
 public class Animal {
 
@@ -11,15 +11,15 @@ public class Animal {
     private String sexe;
     private double taille;
     private double poids;
-    private LocalDate localDate;
+    private LocalDate annif ;
 
     public Animal(String nom, String sexe, double taille,
-                  double poids, Date annif) {
+                  double poids, String annif) {
         this.nom = nom;
         this.sexe = sexe;
         this.taille = taille;
         this.poids = poids;
-        this.localDate = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        this.annif= LocalDate.parse(annif);
     }
 
 
@@ -43,14 +43,24 @@ public class Animal {
         return nom;
     }
 
-    public LocalDate getLocalDate() {
-        return localDate;
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
-    public char getSexe() {
+    public String getAnnif() {
+        return annif.toString();
+    }
+
+    public String getSexe() {
         return sexe;
     }
     public void Crier(){
+
+    }
+
+    public void AllInfo(){
+
+
 
     }
 
