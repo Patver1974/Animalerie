@@ -1,23 +1,27 @@
 package be.bxl.formation.Animaux;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 public class Animal {
 
     private String nom;
 
-    private char sexe;
+    private String sexe;
     private double taille;
     private double poids;
     private LocalDate localDate;
 
-    public Animal(String nom, char sexe, double taille, double poids, LocalDate annif) {
+    public Animal(String nom, String sexe, double taille,
+                  double poids, Date annif) {
         this.nom = nom;
         this.sexe = sexe;
         this.taille = taille;
         this.poids = poids;
-        this.localDate = annif;
+        this.localDate = DateTimeFormatter.ofPattern("dd-MM-yyyy");
     }
+
 
     public void setPoids(double poids) {
         this.poids = poids;
