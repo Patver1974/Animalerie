@@ -47,7 +47,8 @@ public class Main {
                          Nouveauchien(Gestion); break;
                 case "o" :// nouveau oiseau
                     NouveauOiseau(Gestion); break;
-                case "t" :// nouveau chien
+                case "t" :// nouveau chiena
+
                     Nouveauchat(Gestion); break;
                 case "T" : //Afficher tous les chats
                     Gestion.AfficherChat();break;
